@@ -2,19 +2,19 @@
 use invoke as project cli:
 
 1. we can run:  
--invoke build to build the project with ccache and parallelized
--invoke console will connect to the device’s serial console
--invoke gdbserver will spawn JLinkGDBServer with the correct configuration
--invoke flash will flash the binary through GDB and give us a prompt to the device
--invoke debug will attach to a running device using GDB without flashing
+-invoke build to build the project with ccache and parallelized  
+-invoke console will connect to the device’s serial console  
+-invoke gdbserver will spawn JLinkGDBServer with the correct configuration  
+-invoke flash will flash the binary through GDB and give us a prompt to the device  
+-invoke debug will attach to a running device using GDB without flashing  
 
-2. for each command, we will check that the proper binaries/packages are installed using pre tasks
-3. we can run inv --list and inv <command> --help for help menus
+2. for each command, we will check that the proper binaries/packages are installed using pre tasks  
+3. we can run inv --list and inv <command> --help for help menus  
 
 # install invoke  
-$ virtualenv invoke
-$ source invoke/bin/activate
-$ pip install invoke
+$ virtualenv invoke  
+$ source invoke/bin/activate  
+$ pip install invoke  
 
 # invoke script  --> put a tasks.py under project root
 ```python
@@ -48,7 +48,7 @@ def build(ctx):
 ```
 
 // add ccache  
-# ⁨nRF5_SDK_15.2.0/components⁩/toolchain⁩/gcc⁩/Makefile.common
+// ⁨nRF5_SDK_15.2.0/components⁩/toolchain⁩/gcc⁩/Makefile.comm
 
 CCACHE ?= $(if $(filter Windows%,$(OS)),, \
                $(if $(wildcard /usr/bin/ccache),ccache))  
